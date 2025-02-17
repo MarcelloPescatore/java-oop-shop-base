@@ -23,6 +23,11 @@ public class Prodotto {
     };
 
     // Metodi per esporre informazioni
+    public int getCodice() {
+        return this.codice;
+    };
+
+
     public String getNome() {
         return this.nome;
     };
