@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Prodotto monitor = new Prodotto("Odyssey", "Monitor Lg super performante", new BigDecimal(100), new BigDecimal(0.22));
         
+        monitor.setPrezzo(new BigDecimal(200));
+
         System.out.println(monitor.getPrezzo());
         System.out.println(monitor.getPrezzoConIva());
         System.out.println(monitor.getNomeEsteso());

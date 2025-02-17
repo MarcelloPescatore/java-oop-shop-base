@@ -5,17 +5,17 @@ import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
-    Random random = new Random();
-
     // dichiaro le caratteristiche
-    int codice = random.nextInt(99999); //genero il codice randomicamente
-    String nome;
-    String descrizione;
-    BigDecimal prezzo;
-    BigDecimal iva;
+    private int codice; //genero il codice randomicamente
+    private String nome;
+    private String descrizione;
+    private BigDecimal prezzo;
+    private BigDecimal iva;
 
     // costruttore per inizializzare le caratteristiche
-    Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva ) {
+    public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva ) {
+        Random random = new Random();
+        this.codice = random.nextInt(99999);
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
@@ -23,18 +23,48 @@ public class Prodotto {
     };
 
     // Metodi per esporre informazioni
-    BigDecimal getPrezzo() {
+    public String getNome() {
+        return this.nome;
+    };
+
+    public void setNome (String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescrizione() {
+        return this.descrizione;
+    };
+
+    public void setDescrizione (String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+
+    public BigDecimal getPrezzo() {
         return this.prezzo;
     };
 
-    BigDecimal getPrezzoConIva() {
+    public void setPrezzo (BigDecimal prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public BigDecimal getIva() {
+        return this.iva;
+    };
+
+    public void setIva (BigDecimal iva) {
+        this.iva = iva;
+    }
+
+
+    public BigDecimal getPrezzoConIva() {
         if (prezzo != null && iva != null) {
             return prezzo.add(prezzo.multiply(iva)).setScale(2, RoundingMode.DOWN);
         }
         return null;
     };
 
-    String getNomeEsteso() {
+    public String getNomeEsteso() {
         if (nome != null) {
             return codice + "-" + nome;
         }
