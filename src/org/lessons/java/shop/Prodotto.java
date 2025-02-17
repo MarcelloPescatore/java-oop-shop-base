@@ -22,7 +22,7 @@ public class Prodotto {
         this.iva = iva; 
     };
 
-    // Metodi per esporre informazioni
+    // Metodi per esporre e modificare le informazioni
     public int getCodice() {
         return this.codice;
     };
