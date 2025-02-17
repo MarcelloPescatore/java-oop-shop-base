@@ -6,7 +6,7 @@ public class Prodotto {
     Random random = new Random();
 
     // dichiaro le caratteristiche
-    int codice = random.nextInt(127); //genero il codice randomicamente
+    int codice = random.nextInt(1000); //genero il codice randomicamente
     String nome;
     String descrizione;
     float prezzo;
